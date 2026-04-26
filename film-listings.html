@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -6,7 +6,13 @@
     <title>Cinema Listings</title>
     <style>
       /* ── Reset & base ── */
-      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
       body {
         font-family: system-ui, sans-serif;
@@ -89,7 +95,9 @@
         display: flex;
         flex-direction: column;
         gap: 0.6rem;
-        transition: transform 0.15s, box-shadow 0.15s;
+        transition:
+          transform 0.15s,
+          box-shadow 0.15s;
       }
 
       .film-card:hover {
@@ -140,7 +148,6 @@
     </style>
   </head>
   <body>
-
     <header>
       <h1>🎬 Now Showing</h1>
       <p>Cinema listings — rendered from data</p>
@@ -200,10 +207,23 @@
           certificate: "PG",
           duration: 106,
         },
+        {
+          title: "The heroes",
+          director: "Nikita",
+          times: ["12:30", "14:00"],
+          certificate: "PG18",
+          duration: 90,
+        },
       ];
 
       // ── Step 6 + 9: Reusable component using createElement ────────────────
-      const createFilmCard = ({ title, director, times, certificate, duration }) => {
+      const createFilmCard = ({
+        title,
+        director,
+        times,
+        certificate,
+        duration,
+      }) => {
         const card = document.createElement("article");
         card.className = "film-card";
 
@@ -255,6 +275,5 @@
         // TODO: use searchInput.value to filter the films array
       });
     </script>
-
   </body>
 </html>
